@@ -2,7 +2,10 @@ package tech.getarrays.employeemanager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -10,6 +13,9 @@ import org.springframework.web.filter.CorsFilter;
 import java.util.Arrays;
 
 @SpringBootApplication
+@ComponentScan ({"com.jwt.api", "tech.getarrays.employeemanager"})
+@EnableJpaRepositories({"com.jwt.api","tech.getarrays.employeemanager"})
+@EntityScan({"com.jwt.api.entity", "tech.getarrays.employeemanager.model"})
 public class EmployeemanagerApplication {
 
 	public static void main(String[] args) {
@@ -30,6 +36,6 @@ public class EmployeemanagerApplication {
 		UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
 		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 		return new CorsFilter(urlBasedCorsConfigurationSource);
-	}*/
-
+	}
+	*/
 }

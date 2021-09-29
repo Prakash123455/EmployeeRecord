@@ -1,8 +1,15 @@
 package tech.getarrays.employeemanager.resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
+
+import com.jwt.api.entity.AuthRequest;
+import com.jwt.api.util.JwtUtil;
+
 import tech.getarrays.employeemanager.model.Employee;
 import tech.getarrays.employeemanager.service.EmployeeService;
 
@@ -11,12 +18,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/employee")
 public class EmployeeResource {
+	
     private final EmployeeService employeeService;
 
     public EmployeeResource(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
+        
     @GetMapping("/all")
     public ResponseEntity<List<Employee>> getAllEmployees () {
         List<Employee> employees = employeeService.findAllEmployees();

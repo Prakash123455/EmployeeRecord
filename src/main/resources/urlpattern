@@ -1,0 +1,16 @@
+1. Post request 
+	http://localhost:8080/authenticate
+	{
+		"userName":"pikay",
+		"password":"123"
+	}
+	o/p=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaWtheSIsImV4cCI6MTYzMjk0NTQ0MiwiaWF0IjoxNjMyOTA5NDQyfQ.Wf2sbm6hhQFVgl04TrQnVUWm6rUGkrQ9IVWnLxQsvi0
+	
+2. Get request
+	http://localhost:8080/employee/find/1
+	add header ( authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaWtheSIsImV4cCI6MTYzMjk0NTQ0MiwiaWF0IjoxNjMyOTA5NDQyfQ.Wf2sbm6hhQFVgl04TrQnVUWm6rUGkrQ9IVWnLxQsvi0)
+3. Get request
+	http://localhost:8080/employee/all
+	add header ( authorization = Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaWtheSIsImV4cCI6MTYzMjk0NTQ0MiwiaWF0IjoxNjMyOTA5NDQyfQ.Wf2sbm6hhQFVgl04TrQnVUWm6rUGkrQ9IVWnLxQsvi0)
+	
+	
