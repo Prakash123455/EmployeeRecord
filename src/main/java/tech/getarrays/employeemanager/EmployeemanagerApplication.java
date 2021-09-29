@@ -1,5 +1,7 @@
 package tech.getarrays.employeemanager;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -10,17 +12,29 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+import com.jwt.api.entity.User;
+import com.jwt.api.service.CustomUserDetailsService;
+
 import java.util.Arrays;
 
 @SpringBootApplication
-@ComponentScan ({"com.jwt.api", "tech.getarrays.employeemanager"})
+@ComponentScan ({"com.jwt.api", "tech.getarrays.employeemanager","com.jwt.api.service"})
 @EnableJpaRepositories({"com.jwt.api","tech.getarrays.employeemanager"})
 @EntityScan({"com.jwt.api.entity", "tech.getarrays.employeemanager.model"})
-public class EmployeemanagerApplication {
+public class EmployeemanagerApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EmployeemanagerApplication.class, args);
 	}
+	 @Autowired
+	    private CustomUserDetailsService repository;
+	 @Override
+	 public void run(String... args) throws Exception {
+
+	        repository.save(new User(111,"pikay", "123","pk@gmal.com"));
+	        repository.save(new User(112,"anshu", "123","anshu@gmal.com"));
+
+	    }
 /*
 	@Bean
 	public CorsFilter corsFilter() {
