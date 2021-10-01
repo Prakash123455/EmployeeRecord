@@ -31,11 +31,11 @@ public class EmployeemanagerApplication implements CommandLineRunner {
 	 @Override
 	 public void run(String... args) throws Exception {
 
-	        repository.save(new User(111,"pikay", "123","pk@gmal.com"));
-	        repository.save(new User(112,"anshu", "123","anshu@gmal.com"));
+	        repository.save(new User(113,"prakash", "123","prakash@gmal.com"));
+	        repository.save(new User(114,"dev", "123","dev@gmal.com"));
 
 	    }
-/*
+
 	@Bean
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
@@ -51,5 +51,5 @@ public class EmployeemanagerApplication implements CommandLineRunner {
 		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 		return new CorsFilter(urlBasedCorsConfigurationSource);
 	}
-	*/
+	
 }
