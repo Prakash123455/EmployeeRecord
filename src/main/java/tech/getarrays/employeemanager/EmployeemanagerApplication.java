@@ -35,7 +35,7 @@ public class EmployeemanagerApplication implements CommandLineRunner {
 	        repository.save(new User(114,"dev", "123","dev@gmal.com"));
 
 	    }
-
+/*
 	@Bean
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
@@ -51,5 +51,6 @@ public class EmployeemanagerApplication implements CommandLineRunner {
 		urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
 		return new CorsFilter(urlBasedCorsConfigurationSource);
 	}
+	*/
 	
 }
