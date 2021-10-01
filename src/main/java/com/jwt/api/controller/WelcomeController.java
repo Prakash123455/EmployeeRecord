@@ -12,6 +12,7 @@ import com.jwt.api.entity.AuthRequest;
 import com.jwt.api.util.JwtUtil;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class WelcomeController {
 
     @Autowired
