@@ -13,7 +13,7 @@ import com.jwt.api.entity.AuthRequest;
 import com.jwt.api.util.JwtUtil;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class WelcomeController {
 
     @Autowired
