@@ -2,9 +2,13 @@ package com.learning.employeemanager.resource;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
 import com.learning.employeemanager.model.Employee;
+import com.learning.employeemanager.security.entity.AuthRequest;
 import com.learning.employeemanager.service.EmployeeService;
 
 import java.util.List;
@@ -17,6 +21,7 @@ public class EmployeeResource {
     public EmployeeResource(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
+
 
     @GetMapping("/all")
     public ResponseEntity<List<Employee>> getAllEmployees () {
